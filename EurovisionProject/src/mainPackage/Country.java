@@ -20,7 +20,7 @@ public class Country {
     public void setName(String request){
         name = handy.Validator.readString(request);
     }
-    
+    //comentari
     public void toVote(Country[] countries, int selfIndex){
         
         Random r = new Random();
