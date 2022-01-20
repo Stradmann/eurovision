@@ -4,22 +4,24 @@ import mainPackage.Country;
 
 public class Main {
 
+    final static int MAX_COUNTRIES = 26;
+    
     public static void main(String[] args) {
         //TODO
         //Creem la llista de participants
-        final int MAX_COUNTRIES = 26;
         Country[] countries = createCountries(MAX_COUNTRIES);
+        PointsTable.initializePointsTable();
         
-        //fem la votacio.
+        //fem la votacio y assignem el punts.
         for(int i = 0; i < countries.length; i++){
-            countries[i].toVote(countries, i);
+            int[] votes = countries[i].toVote(i);
+            PointsTable.assignCountryPoints(i, votes);
         }
         
         //contem els punts
         for(int i = 0; i < countries.length; i++){
-            countries[i].sumTotalPoints(countries[i].pDistribution);
+            countries[i].totalPoints = PointsTable.sumContryPoints(i);
         }
-        
         //trobem el best
         //trobem el looser
         //imprimim per pantalla els resultats
@@ -32,7 +34,7 @@ public class Main {
             countries[i] = new Country();
             countries[i].setName("Introduex el nom del participant num " + (i + 1));
             countries[i].totalPoints = 0;
-            handy.ArrayManager.initializeToZero(countries[i].pDistribution);
+            
         }
         
         return countries;
