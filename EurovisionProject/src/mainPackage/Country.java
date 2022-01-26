@@ -6,11 +6,12 @@ import java.util.Random;
 
 public class Country {
     
-    private String name;
+    String name;
     int totalPoints;
     
-    public void setName(String request){
-        name = handy.Validator.readString(request);
+    public void setName(String request, Country[] countries){
+        String inputName = handy.Validator.readString(request);
+        name = handy.Validator.normalize(inputName);
     }
     //comentari
     public int[] toVote(int selfIndex){

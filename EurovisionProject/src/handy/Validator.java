@@ -77,6 +77,30 @@ public class Validator {
         return result;
     }
     
+    //NORMAILIZE
+    public static String normalize(String input){
+        input = input.toUpperCase();
+        char[] inputArray = new char[input.length()];
+        for(int i = 0; i < inputArray.length; i++){
+            inputArray[i] = input.charAt(i);
+        }
+        //Eliminar espacios del principio
+        while(inputArray[0] == ' '){
+            inputArray = handy.ArrayManager.removeOne(inputArray, 0);
+        }
+        //Eliminar espacios del final
+        while(inputArray[inputArray.length - 1] == ' '){
+            inputArray = handy.ArrayManager.removeOne(inputArray, inputArray.length -1);
+        }
+        
+        String result = "";
+        for(int i = 0; i < inputArray.length; i++){
+            result += inputArray[i];
+        }
+        
+        return result;
+    }
+    
     //FUNCIO READFLOAT
     public static float readFloat(String request) {
         Scanner scan = openScan();

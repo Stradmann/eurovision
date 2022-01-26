@@ -36,20 +36,4 @@ public class PointsTable {
         
         return sum;
     }
-    
-    public static int findBest(){
-        
-        int maxTwelves = 0;
-        int result;
-        
-        for(int j = 0; j < table[0].length; j++){
-            int countTwelves = 0;
-            for(int i = 0; i < table.length; i++){
-                if(table[i][j] == 12){
-                    countTwelves++;
-                }
-            }
-            if(countTwelves > maxTwelves)
-        }
-    }
 }

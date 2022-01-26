@@ -32,7 +32,19 @@ public class Main {
         Country[] countries = new Country[maxCountries];
         for(int i = 0; i < countries.length; i++){
             countries[i] = new Country();
-            countries[i].setName("Introduex el nom del participant num " + (i + 1));
+            
+            boolean sameCountry = false;
+            do{
+                countries[i].setName("Introduex el nom del participant num " + (i + 1), countries);
+                for(int j = 0; j < countries.length && !sameCountry; j++){
+                    if(i != j && countries[j] != null){
+                        if(countries[i].name.equals(countries[j].name)){
+                            sameCountry = true;
+                        }
+                    }
+                }
+            }while(sameCountry);
+            
             countries[i].totalPoints = 0;
             
         }
