@@ -25,6 +25,9 @@ public class Main {
         //trobem el best
         //trobem el looser
         //imprimim per pantalla els resultats
+        for(int i = 0; i < countries.length / 2; i++){
+            System.out.print(countries[i].toString() + countries[i + (countries.length / 2)].toString() + "\n");
+        }
     }
     
     public static Country[] createCountries(int maxCountries){

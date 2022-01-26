@@ -80,10 +80,7 @@ public class Validator {
     //NORMAILIZE
     public static String normalize(String input){
         input = input.toUpperCase();
-        char[] inputArray = new char[input.length()];
-        for(int i = 0; i < inputArray.length; i++){
-            inputArray[i] = input.charAt(i);
-        }
+        char[] inputArray = input.toCharArray();
         //Eliminar espacios del principio
         while(inputArray[0] == ' '){
             inputArray = handy.ArrayManager.removeOne(inputArray, 0);

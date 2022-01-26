@@ -35,4 +35,23 @@ public class Country {
         
         return ballotsSelected;
     }
+    
+    @Override
+    public String toString(){
+        
+        final int CELLNAMEWIDTH = 60;
+        final int CELLPOINTSWIDTH = 10;
+        String result = "";
+        for (int i = 0; i < CELLNAMEWIDTH - name.length(); i++){
+            result += " ";
+        }
+        result += name;
+        String pointStr = String.valueOf(totalPoints);
+        for(int i = 0; i < CELLPOINTSWIDTH - pointStr.length(); i++){
+            result += " ";
+        }
+        result += pointStr;
+        
+        return result;
+    }
 }
