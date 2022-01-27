@@ -1,5 +1,7 @@
 package mainPackage;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import mainPackage.Country;
 
 public class Main {
@@ -37,6 +39,11 @@ public class Main {
             theLoosers[i] = countries[looserCountryIndex[i]];
         }
         //ordenem els resultats
+        
+        ArrayList arrayListInt = new ArrayList<>();      
+        arrayListInt.add(countries);
+        Collections.sort(arrayListInt);
+        
         //imprimim per pantalla els resultats
         for(int i = 0; i < countries.length / 2; i++){
             System.out.print(countries[i].toString() + countries[i + (countries.length / 2)].toString() + "\n");
