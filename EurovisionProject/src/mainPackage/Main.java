@@ -5,6 +5,8 @@ import mainPackage.Country;
 public class Main {
 
     final static int MAX_COUNTRIES = 26;
+    final static int MAX_POINT = 12;
+    final static int MIN_POINT = 0;
     
     public static void main(String[] args) {
         //TODO
@@ -23,7 +25,18 @@ public class Main {
             countries[i].totalPoints = PointsTable.sumContryPoints(i);
         }
         //trobem el best
+        int[] bestCountryIndex = PointsTable.countPointType(MAX_POINT);
+        Country[] theBests = new Country[bestCountryIndex.length];
+        for(int i = 0; i < theBests.length; i++){
+            theBests[i] = countries[bestCountryIndex[i]];
+        }
         //trobem el looser
+        int[] looserCountryIndex = PointsTable.countPointType(MIN_POINT);
+        Country[] theLoosers = new Country[looserCountryIndex.length];
+        for(int i = 0; i < theLoosers.length; i++){
+            theLoosers[i] = countries[looserCountryIndex[i]];
+        }
+        //ordenem els resultats
         //imprimim per pantalla els resultats
         for(int i = 0; i < countries.length / 2; i++){
             System.out.print(countries[i].toString() + countries[i + (countries.length / 2)].toString() + "\n");
