@@ -39,13 +39,10 @@ public class Main {
             theLoosers[i] = countries[looserCountryIndex[i]];
         }
         //ordenem els resultats
-        
-        ArrayList arrayListInt = new ArrayList<>();      
-        arrayListInt.add(countries);
-        Collections.sort(arrayListInt);
-        
+        quicksort(countries);
+
         //imprimim per pantalla els resultats
-        for(int i = 0; i < countries.length / 2; i++){
+        for (int i = 0; i < countries.length / 2; i++) {
             System.out.print(countries[i].toString() + countries[i + (countries.length / 2)].toString() + "\n");
         }
     }
@@ -74,4 +71,30 @@ public class Main {
         
         return countries;
     }
+    public static void quicksort(int A[], int izq, int der) {
+
+  int pivote=A[izq]; // primer numero de la cadena
+  int i=izq;         // i scan dreta a esquerra
+  int j=der;         // j scan dreta a esquerra
+  int aux;
+ 
+  while(i < j){                          // mentres no es creuen les búsquedes                                   
+     while(A[i] <= pivote && i < j) i++; // busca l'element major que pivote
+     while(A[j] > pivote) j--;           // busca l'element menor que pivote
+     if (i < j) {                        // si no s'han creuat                      
+         aux= A[i];                      // els intercanvia
+         A[i]=A[j];
+         A[j]=aux;
+     }
+   }
+     
+   A[izq]=A[j];                                         
+   A[j]=pivote;     
+   
+   if(izq < j-1)
+      quicksort(A,izq,j-1);          
+   if(j+1 < der)
+      quicksort(A,j+1,der);       
+   
+}
 }
