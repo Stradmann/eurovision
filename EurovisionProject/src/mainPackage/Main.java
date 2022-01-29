@@ -38,9 +38,9 @@ public class Main {
         for(int i = 0; i < theLoosers.length; i++){
             theLoosers[i] = countries[looserCountryIndex[i]];
         }
-        //ordenem els resultats
-        quicksort(countries);
-
+        //ordenem els resultats       
+        int esq =1, dret =311; //esq el minim, dret el maxim
+        quicksort(totalPoints, esq,dret); 
         //imprimim per pantalla els resultats
         for (int i = 0; i < countries.length / 2; i++) {
             System.out.print(countries[i].toString() + countries[i + (countries.length / 2)].toString() + "\n");
@@ -91,10 +91,12 @@ public class Main {
    A[izq]=A[j];                                         
    A[j]=pivote;     
    
-   if(izq < j-1)
-      quicksort(A,izq,j-1);          
-   if(j+1 < der)
-      quicksort(A,j+1,der);       
-   
+   if(izq < j-1){
+      quicksort(A,izq,j-1); 
+   }
+   if(j+1 < der){
+      quicksort(A,j+1,der);  
+   }
 }
+   
 }
