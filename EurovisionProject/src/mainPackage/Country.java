@@ -4,16 +4,29 @@ package mainPackage;
 import handy.ArrayManager;
 import java.util.Random;
 
+/**
+ * La Classe <b>Country</b> es un objecte amb els atributs <b>name</b> i <b>totalPoints</b>.
+ * Tambe conté una serie de funcions pròpies per posar el nom, per votar i per convertirlo en un String.
+ */
 public class Country {
     
     String name;
     int totalPoints;
     
-    public void setName(String request, Country[] countries){
+    /**
+     * Aquesta funcio demana el nom del <b>Country</b> i l'assigna a l'atrivut <b>name</b> del <b>Country</b> en questio
+     * @param request el misatge amb el que es demanara el nom del <b>Country</b>
+     */
+    public void setName(String request){
         String inputName = handy.Validator.readString(request);
         name = handy.Validator.normalize(inputName);
     }
-    //comentari
+    /**
+     * Aquesta funcio simula la votació de un pais. Es creeen unes paperetas que es van eliminant de l'array de <b>ballots</b>
+     * a mida que surten per tal que no es repeteixi la elecció
+     * @param selfIndex L'index del propi <b>Country</b>, que eliminat el primer de las <b>ballots</b> per tal que no es voti a si mateix.
+     * @return un array de int que representen els indexs dels països seleccionats.
+     */
     public int[] toVote(int selfIndex){
       
         //Creamos las papeletas
@@ -36,10 +49,14 @@ public class Country {
         return ballotsSelected;
     }
     
+    /**
+     * Aquesta funcio converteix en un String l'objecte <b>Country</b> per tal de poderlo imprimir formatat.
+     * @return l'String que descriu l'objecte
+     */
     @Override
     public String toString(){
         
-        final int CELLNAMEWIDTH = 60;
+        final int CELLNAMEWIDTH = 40;
         final int CELLPOINTSWIDTH = 10;
         String result = "";
         for (int i = 0; i < CELLNAMEWIDTH - name.length(); i++){
