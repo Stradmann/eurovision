@@ -56,4 +56,33 @@ public class ArrayManager {
         
         return result;
     }
+    
+    //REVERSE
+    public static void reverseArray(int[] array){
+        int aux;
+        int j = array.length - 1;
+        
+        for (int i = 0; i < array.length; i++){
+            if(i < j){
+                aux = array[i];
+                array[i] = array[j];
+                array[j] = aux;
+            }
+            j--;
+        }
+    }
+    
+    public static void reverseArray(Country[] array){
+        Country aux;
+        int j = array.length - 1;
+        
+        for (int i = 0; i < array.length; i++){
+            if(i < j){
+                aux = array[i];
+                array[i] = array[j];
+                array[j] = aux;
+            }
+            j--;
+        }
+    }
 }
