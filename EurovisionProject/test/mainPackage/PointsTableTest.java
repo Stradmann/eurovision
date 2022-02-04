@@ -53,7 +53,7 @@ public class PointsTableTest {
     public void testAssignCountryPoints() {
         System.out.println("assignCountryPoints");
         int countryIndex = 0;
-        int[] votedCountries = null;
+        int[] votedCountries = new int[10];
         PointsTable.assignCountryPoints(countryIndex, votedCountries);
     }
 
