@@ -38,26 +38,6 @@ public class PointsTableTest {
     }
 
     /**
-     * Test of initializePointsTable method, of class PointsTable.
-     */
-    @Test
-    public void testInitializePointsTable() {
-        System.out.println("initializePointsTable");
-        PointsTable.initializePointsTable();
-    }
-
-    /**
-     * Test of assignCountryPoints method, of class PointsTable.
-     */
-    @Test
-    public void testAssignCountryPoints() {
-        System.out.println("assignCountryPoints");
-        int countryIndex = 0;
-        int[] votedCountries = new int[10];
-        PointsTable.assignCountryPoints(countryIndex, votedCountries);
-    }
-
-    /**
      * Test of sumContryPoints method, of class PointsTable.
      */
     @Test
